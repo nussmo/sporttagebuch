@@ -2,7 +2,7 @@
 /build/
 /bin/
 !gradle/wrapper/gradle-wrapper.jar
-.npm-debug.log
+npm-debug.log
 
 ### STS ###
 .apt_generated
