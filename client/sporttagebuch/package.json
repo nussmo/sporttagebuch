@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.4.2",
+    "react-bootstrap": "^0.32.4",
+    "react-bootstrap-table-next": "^1.1.4",
+    "react-datepicker": "^1.7.0",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.5"
   },
