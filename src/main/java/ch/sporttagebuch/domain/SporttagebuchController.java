@@ -3,9 +3,12 @@ package ch.sporttagebuch.domain;
 import java.util.List;
 import java.util.Optional;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin
 @RestController
 public class SporttagebuchController {
 	
@@ -44,10 +48,12 @@ public class SporttagebuchController {
 	}
 	
 	@PostMapping("/tagebuch")
-	public ResponseEntity<Sporttagebuch> createEntry(@RequestBody Sporttagebuch entry){
+	public ResponseEntity<Sporttagebuch> createEntry(@RequestBody String entry) throws JSONException{
 		//TODO: test preconditions
 		/* if(entry.hasErrors()){return new ResponseEntity<Sporttagebuch>(HttpStatus.PRECONDITION_FAILED);*/
-		Sporttagebuch savedEntry = repository.save(entry);
+		JSONObject json = new JSONObject(entry);
+		Sporttagebuch newEntry = new Sporttagebuch(json);	
+		Sporttagebuch savedEntry = repository.save(newEntry);
 		return new ResponseEntity<Sporttagebuch>(savedEntry, HttpStatus.CREATED);
 	}
 	
@@ -64,7 +70,8 @@ public class SporttagebuchController {
 //			oldEntry.setDate(entry.getDate());
 //			oldEntry.setTime(entry.getTime());
 			oldEntry.setDiscipline(entry.getDiscipline());
-			oldEntry.setNotes(entry.getNotes());
+//			oldEntry.setIntensity(entry.getIntensity());
+//			oldEntry.setNotes(entry.getNotes());
 			Sporttagebuch savedEntry = repository.save(oldEntry);
 			return new ResponseEntity<Sporttagebuch>(savedEntry, HttpStatus.OK);
 		}
