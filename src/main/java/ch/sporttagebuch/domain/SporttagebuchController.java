@@ -26,7 +26,8 @@ public class SporttagebuchController {
 	
 	@GetMapping("/tagebuch")
 	public List<Sporttagebuch> getAllEntries(){
-		return repository.findAll();
+		List<Sporttagebuch> sporttagebucht = repository.findAll();
+		return sporttagebucht;
 	}
 	
 	@GetMapping("/tagebuch/{id}")

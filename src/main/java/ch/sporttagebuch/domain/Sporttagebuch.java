@@ -22,9 +22,9 @@ public class Sporttagebuch {
 	
 	@Temporal(TemporalType.DATE)
 	private Date date;
-//	private Date time;
 	private String discipline;
 	private String intensity;
+	private String duration;
 	private String notes;
 	
 	public Sporttagebuch(){}
@@ -40,6 +40,7 @@ public class Sporttagebuch {
 			}
 			this.discipline = json.getString("discipline");
 			this.intensity = json.getString("intensity");
+			this.duration = json.getString("duration");
 			this.notes = json.getString("notes");
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -54,14 +55,6 @@ public class Sporttagebuch {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-
-//	public Date getTime() {
-//		return time;
-//	}
-//
-//	public void setTime(Date time) {
-//		this.time = time;
-//	}
 
 	public Long getId() {
 		return id;
@@ -81,6 +74,14 @@ public class Sporttagebuch {
 
 	public void setIntensity(String intensity) {
 		this.intensity = intensity;
+	}
+	
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
 	}
 
 	public String getNotes() {

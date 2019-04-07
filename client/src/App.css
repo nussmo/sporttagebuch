@@ -1,0 +1,32 @@
+.App{
+	min-height: 100%;
+	position: relative;
+}
+
+.App-header{
+  background-image: linear-gradient(to right, #79F1A4, #0E5CAD);
+  text-align: center;
+  padding: 30px;
+  color: #212529;
+}
+
+.App-container{
+  padding-bottom: 80px; /*height of footer*/
+  margin-top: 50px;
+  margin-right: 200px;
+  margin-left: 200px;
+}
+
+.App-footer{
+  background-image: linear-gradient(to right, #79F1A4, #0E5CAD);
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  padding: 25px;
+  color: #212529;
+}
+
+
+
