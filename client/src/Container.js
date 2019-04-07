@@ -113,8 +113,8 @@ class Container extends Component {
 	<div className="App-container">
 		<div className="newSportsactivity-container">
 		<Form>
-			<Form.Group as={Row} controlId='formGridDate'>
-				<Form.Label column sm={2} className='dateLabel'>Datum</Form.Label>
+			<Form.Group as={Row}>
+				<Form.Label column sm={2}>Datum</Form.Label>
 				<Col sm={10}>
 					<DatePicker 
 						dateFormat="dd-MM-YYYY" 
@@ -125,11 +125,10 @@ class Container extends Component {
 					/>
 				</Col>
 			</Form.Group>
-			<Form.Group as={Row} controlId='formGridHour'>
-				<Form.Label column sm={2} className='timeLabel'>Dauer</Form.Label>
+			<Form.Group as={Row}>
+				<Form.Label column sm={2}>Dauer</Form.Label>
 				<Col sm={5}>
 					<Form.Control
-						className="hourControl"
 						as="select" 
 					>
 						<option defaultValue="none">0h</option>
@@ -145,7 +144,6 @@ class Container extends Component {
 				</Col>
 				<Col sm={5}>
 					<Form.Control 
-						className="minControl"
 						onChange={this.onDurationChange.bind(this)}
 						as="select" 
 					>
@@ -156,22 +154,20 @@ class Container extends Component {
 					</Form.Control>
 				</Col>
 			</Form.Group>
-			<Form.Group as={Row} controlId='formGridDiscipline'>
-				<Form.Label column sm={2} className="disciplineLabel">Sportart</Form.Label>
+			<Form.Group as={Row}>
+				<Form.Label column sm={2}>Sportart</Form.Label>
 				<Col sm={10}>
 					<Form.Control 
-						className="disciplineControl"
 						type="text" 
 						placeholder="Sportart auswählen" 
 						onChange={this.onDisciplineChange.bind(this)}
 					/>
 				</Col>
 			</Form.Group>
-			<Form.Group as={Row} controlId='formGridIntensity'>
-				<Form.Label column sm={2} className="intensityLabel">Intensität</Form.Label>
+			<Form.Group as={Row}>
+				<Form.Label column sm={2}>Intensität</Form.Label>
 				<Col sm={10}>
 					<Form.Control 
-						className="intensityControl"
 						onChange={this.onIntensityChange.bind(this)}
 						as="select" 
 					>
@@ -182,11 +178,10 @@ class Container extends Component {
 					</Form.Control>
 				</Col>
 			</Form.Group>
-			<Form.Group as={Row} controllId='formGridNotes'>
-				<Form.Label column sm={2} className="notesLabel">Bemerkung</Form.Label>
+			<Form.Group as={Row}>
+				<Form.Label column sm={2}>Bemerkung</Form.Label>
 				<Col sm={10}>
 					<Form.Control 
-						className="notesControl"
 						as="textarea" 
 						placeholder="Bemerkung" 
 						onChange={this.onNotesChange.bind(this)} 
@@ -194,7 +189,7 @@ class Container extends Component {
 				</Col>
 			</Form.Group>
 			<Button 
-				className="newButton" 
+				className="float-right"
 				type="submit" 
 				onClick={this.submit.bind(this)}
 				>
